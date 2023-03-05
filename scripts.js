@@ -16,8 +16,8 @@ let data = [{
   description: 'What happened here, why is this a very nice image 4'
 }, {
   photo: 'img/05.jpg',
-  title: 'My title ',
-  description: 'What happened here, why is this a very nice image '
+  title: 'My title 5',
+  description: 'What happened here, why is this a very nice image 5'
 }, {
   photo: 'img/06.jpg',
   title: 'My title 6',
@@ -44,26 +44,58 @@ let currentPhoto = 0;
 
 let loadPhoto = (photoNumber) => {
   $('#photo').attr('src', data[currentPhoto].photo);
+  $('#title').text(data[currentPhoto].title);
+  $('#description').text(data[currentPhoto].description);
 }
 
 loadPhoto(currentPhoto);
 
+// show hide description
+$('.photo').click(() => {
+  $('.description').fadeToggle();
+});
+
+// right click
 $('#r_arrow').click(() => {
+
   currentPhoto++;
-  
   if (currentPhoto >= data.length) {
     currentPhoto = 0;
   }
-
   loadPhoto(currentPhoto);
+
 })
 
+// left click
 $('#l_arrow').click(() => {
-  currentPhoto--;
 
+  currentPhoto--;
   if (currentPhoto < 0) {
     currentPhoto = 9;
   }
-
   loadPhoto(currentPhoto);
+
+})
+
+
+// keydown left right
+$('body').keydown((key) => {
+
+  if ( key.which == 37 ) {
+    currentPhoto--;
+    if (currentPhoto < 0) {
+      currentPhoto = 9;
+    }
+    loadPhoto(currentPhoto);
+
+   } else if ( key.which == 39 ) {
+
+    currentPhoto++;
+    if (currentPhoto >= data.length) {
+      currentPhoto = 0;
+    }
+    loadPhoto(currentPhoto);
+
+   }
+  console.log('pp');
 })
