@@ -43,12 +43,16 @@ let data = [{
 let currentPhoto = 0;
 
 let loadPhoto = (photoNumber) => {
-  $('#photo').attr('src', data[currentPhoto].photo);
-  $('#title').text(data[currentPhoto].title);
-  $('#description').text(data[currentPhoto].description);
+  $('#photo').attr('src', data[photoNumber].photo);
+  $('#title').text(data[photoNumber].title);
+  $('#description').text(data[photoNumber].description);
 }
 
+// load page
 loadPhoto(currentPhoto);
+data.forEach((e, index) => {
+  $('.thubnails').append('<div class="thubnail"><img src="' + e.photo + '" data-number="' + index + '"alt="" height="70px"></div>');
+});
 
 // show hide description
 $('.photo').click(() => {
@@ -97,5 +101,24 @@ $('body').keydown((key) => {
     loadPhoto(currentPhoto);
 
    }
-  console.log('pp');
+  
 })
+
+// click on thumbs
+$('.thubnail').on('click', (event) => {
+  console.log((event.target.parentNode));
+  currentPhoto = $(event.target).attr('data-number');
+  $(event.target.parentNode).siblings().removeClass('active'); 
+  $(event.target).parent().addClass('active'); 
+  loadPhoto(currentPhoto);
+})
+
+// highliting thumbs
+/* $('.thubnail').hover(
+  function() {
+      $(this).animate({ 'zoom': 1.1 }, 200);
+  },
+  function() {
+      $(this).animate({ 'zoom': 1 }, 200);
+  }
+); */
