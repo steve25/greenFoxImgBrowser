@@ -1,6 +1,6 @@
 const data = [
   {
-    photo: "/assets/img/01.jpg",
+    photo: "./assets/img/01.jpg",
     title: "My title",
     description: "What happened here, why is this a very nice image",
   },
