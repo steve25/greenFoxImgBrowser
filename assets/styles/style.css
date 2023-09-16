@@ -1,7 +1,12 @@
 body {
   margin: 0;
-  background: rgb(144,144,144);
-  background: linear-gradient(90deg, rgba(144,144,144,1) 0%, rgba(199,199,199,1) 45%, rgba(153,161,163,1) 100%);
+  background: rgb(144, 144, 144);
+  background: linear-gradient(
+    90deg,
+    rgba(144, 144, 144, 1) 0%,
+    rgba(199, 199, 199, 1) 45%,
+    rgba(153, 161, 163, 1) 100%
+  );
 }
 
 main {
@@ -23,6 +28,7 @@ main {
   align-items: center;
   display: flex;
   padding: 0 20px;
+  cursor: pointer;
 }
 
 .l_arrow:hover {
@@ -39,6 +45,7 @@ main {
   display: flex;
   transform: rotate(0.5turn);
   padding: 0 20px;
+  cursor: pointer;
 }
 
 .r_arrow:hover {
@@ -78,6 +85,7 @@ main {
   margin: 0 auto;
   background-color: white;
   position: relative;
+  cursor: pointer;
 }
 
 .sphoto img {
@@ -89,7 +97,7 @@ main {
 }
 
 .sphoto img:hover {
-  background-color: rgb(73, 73, 73);
+  background-color: #494949;
   transform: scale(1.2);
 }
 
@@ -97,6 +105,8 @@ main {
   position: absolute;
   top: -26px;
   left: 25px;
+  filter: invert(27%) sepia(17%) saturate(10%) hue-rotate(359deg)
+    brightness(95%) contrast(90%);
 }
 
 img {

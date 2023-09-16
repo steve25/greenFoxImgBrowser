@@ -1,30 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Image viewer</title>
-</head>
-<body>
-<main>
-  <div class="viewer">
-    <div  id="l_arrow" class="l_arrow"><img src="img/arrow.svg" alt="left arrow" width="30px"></div>
-    <div class="photo">
-      <img id="photo" width="900px" height="600px">
-      <div class="description">
-        <h1 id="title"></h1>
-        <p id="description"></p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./assets/styles/style.css" />
+    <title>Image viewer</title>
+  </head>
+  <body>
+    <main>
+      <div class="viewer">
+        <div id="l_arrow" class="l_arrow">
+          <img src="./assets/img/arrow.svg" alt="left arrow" width="30px" />
+        </div>
+        <div class="photo">
+          <img id="photo" width="900px" height="600px" />
+          <div class="description">
+            <h1 id="title"></h1>
+            <p id="description"></p>
+          </div>
+        </div>
+        <div id="r_arrow" class="r_arrow">
+          <img src="./assets/img/arrow.svg" alt="right arrow" width="30px" />
+        </div>
       </div>
-    </div>
-    <div id="r_arrow" class="r_arrow"><img src="img/arrow.svg" alt="right arrow" width="30px"></div>
-  </div>
-  <div class="thubnails"></div>
-</main>
+      <div class="thubnails"></div>
+    </main>
 
-
-<script src="jquery-3.6.3.min.js"></script>
-<script src="scripts.js"></script>
-</body>
+    <script src="./assets/scripts/jquery-3.6.3.min.js"></script>
+    <script src="./assets/scripts/scripts.js" type="module"></script>
+  </body>
 </html>
